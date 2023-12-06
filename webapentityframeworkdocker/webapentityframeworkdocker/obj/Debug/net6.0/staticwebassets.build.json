@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "umHf1Im9LA6kWvEW1zwZfRtk30nKBYLFLKN2OOyEtQY=",
+  "Source": "webapentityframeworkdocker",
+  "BasePath": "_content/webapentityframeworkdocker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

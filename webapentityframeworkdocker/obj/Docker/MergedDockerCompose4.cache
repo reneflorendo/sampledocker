@@ -1,0 +1,42 @@
+name: dockercompose6113984134437807847
+services:
+  webapentityframeworkdocker:
+    build:
+      context: C:\programming\docker\webapentityframeworkdocker
+      dockerfile: webapentityframeworkdocker/Dockerfile
+    container_name: web_api_application
+    depends_on:
+      webapidb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webapentityframeworkdocker
+    networks:
+      appnetwork: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        published: "8001"
+        protocol: tcp
+  webapidb:
+    container_name: sqlserver2019db
+    environment:
+      ACCEPT_EULA: "y"
+      SA_PASSWORD: Pa55W0rd!
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      appnetwork:
+        aliases:
+          - sqlserver2019db
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8002"
+        protocol: tcp
+networks:
+  appnetwork:
+    name: dockercompose6113984134437807847_appnetwork
