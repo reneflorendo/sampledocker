@@ -17,7 +17,7 @@ Use the docker exec -it command to start an interactive bash shell inside your r
 Bash
 
 Copy
-sudo docker exec -it sql1 "bash"
+sudo docker exec -it sqlserver2019db "bash"
 Once inside the container, connect locally with sqlcmd, using its full path.
 
 Bash
